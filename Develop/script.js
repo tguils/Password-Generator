@@ -3,17 +3,24 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
   if(password !== undefined) {
     passwordText.value = password;
   } else {
     return
   }
 }
-
-function getRandomNumber(min, max) {
-  return Math.random() * (max - min) + min;
+//trying new method here. pulling all characters into one string. will have to figure out how to divy them out based on user preference later.
+function generatePassword() {
+  var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var passwordLength = 6;
+  var password = "";
+  for(var i = 0; i <= passwordLength; i++){
+    var randomNumber = Math.floor(Math.random() * chars.length);
+    password += chars.substring(random.Number, randomNumber +1);
+  }
+  document.querySelector("#password").value = password;
 }
 
 function generatePassword() {
@@ -26,7 +33,10 @@ function generatePassword() {
     console.log(passwordHasUppercase , passwordHasLowerCase, passwordHasNumeric, passwordHasSpecialCharacters);
 
     // // Generate the password based on the above variable information.
- 
+ //move this up to for loop under generate password function
+    /*function getRandomNumber(min, max) {
+      return Math.random() * (max - min) + min;
+    }*/
 
     if(passwordHasUppercase && passwordHasLowerCase) {
       var password = getRandomNumber(8, 128);
