@@ -28,7 +28,7 @@ function gatherPromptsforPassword() {
     if (passwordHasUpperCase) {
     	generateAllCapsPassword();
     } else {
-    		generatePassword(12, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    		generatePassword(6, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
     }
     
   } else {
