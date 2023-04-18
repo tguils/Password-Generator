@@ -11,20 +11,25 @@ function writePassword() {
     return
   }
 }
+
+//unclear wehre to use var vs let 
+
 //trying new method here. pulling all characters into one string. will have to figure out how to divy them out based on user preference later.
 function generatePassword() {
-  var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var passwordLength = 6;
-  var password = "";
-  for(var i = 0; i <= passwordLength; i++){
-    var randomNumber = Math.floor(Math.random() * chars.length);
+  let chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let passwordLength = 6; //need to figure out how to make the length user picked instead
+  let password = "";
+  for(let i = 0; i <= passwordLength; i++){
+    let randomNumber = Math.floor(Math.random() * chars.length);
     password += chars.substring(random.Number, randomNumber +1);
   }
   document.querySelector("#password").value = password;
 }
 
-function generatePassword() {
+//changed function name as I can still use this function but can't be same name as above
+function gatherPromptsforPassword() {
   let passwordLength = prompt('How many characters should you password be? (must be between 8 and 128)');
+  
   if(passwordLength >= 8 && passwordLength <= 128) {
     let passwordHasUppercase = confirm('Will the password contain uppercase letters? (Cancel for no uppercase)');
     let passwordHasLowerCase = confirm('Will the password contain lowercase letters? (Cancel for no lowercase)');
@@ -38,13 +43,9 @@ function generatePassword() {
       return Math.random() * (max - min) + min;
     }*/
 
-    if(passwordHasUppercase && passwordHasLowerCase) {
-      var password = getRandomNumber(8, 128);
-    } else {
-      var password = 'Your password is going to be ' + passwordLength + ' characters long';
-    }
-    return password;
-  } else {
+    //this will run the function above to generate password - which in turn should run the prompts function. 
+    generatePassword(); {
+  else {
     alert('You must enter a value between 8-128!');
   }
 }
