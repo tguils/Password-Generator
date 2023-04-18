@@ -12,7 +12,7 @@ function writePassword() {
   }
 }
 
-//unclear wehre to use var vs let 
+//unclear where to use var vs let - using lets for now
 
 //trying new method here. pulling all characters into one string. will have to figure out how to divy them out based on user preference later.
 function generatePassword() {
@@ -26,6 +26,16 @@ function generatePassword() {
   document.querySelector("#password").value = password;
 }
 
+
+function generateAllCapsPassword() {
+	let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let passwordLength = 6;
+  let password = "";
+  
+ 	for (let i = 0; i <= passwordLength; i++) {
+   let randomNumber = Math.floor(Math.random() * chars.length);
+   password += chars.substring(randomNumber, randomNumber +1);
+
 //changed function name as I can still use this function but can't be same name as above
 function gatherPromptsforPassword() {
   let passwordLength = prompt('How many characters should you password be? (must be between 8 and 128)');
@@ -38,14 +48,13 @@ function gatherPromptsforPassword() {
     console.log(passwordHasUppercase , passwordHasLowerCase, passwordHasNumeric, passwordHasSpecialCharacters);
 
     // // Generate the password based on the above variable information.
- //move this up to for loop under generate password function
-    /*function getRandomNumber(min, max) {
-      return Math.random() * (max - min) + min;
-    }*/
-
     //this will run the function above to generate password - which in turn should run the prompts function. 
     generatePassword(); {
-  else {
+      else if (passwordHasUpperCase) {
+        generateAllCapsPassword();
+      }
+  
+      else {
     alert('You must enter a value between 8-128!');
   }
 }
