@@ -1,3 +1,5 @@
+
+
 *,
 *::before,
 *::after {
@@ -72,7 +74,7 @@ header {
   clear: both;
 }
 
-.btn {
+.generate {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
@@ -134,18 +136,4 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
-}
-.generate {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  background-color: orange;
-  color: white;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: 20px;
-  max-width: 250px;
-  height: 50px;
 }
