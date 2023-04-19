@@ -1,7 +1,6 @@
 
 // when to use var vs let vs const
 function gatherPromptsForPassword() {
-  console.log('on click works');
   let passwordLength = prompt('How many characters should your password be? (must be between 8 and 128)');
   
   if(passwordLength >= 8 && passwordLength <= 128) {
@@ -34,17 +33,23 @@ function gatherPromptsForPassword() {
         charlist += special;
         console.log(charList);
       }
-    // I need a way to generate the password from charList 
-    // Consider using substring method from https://dev.to/code_mystery/random-password-generator-using-javascript-6a
-    // Study for loop for random generator
-    // Get character count into random generator
-    // Set variable for "password"
-    // document.getElementById("password").value = password;
+    
+        for (let i = 0; i <= passwordLength; i++) {
+         let randomNumber = Math.floor(Math.random() * charList.length);
+         // Taken from https://dev.to/code_mystery/random-password-generator-using-javascript-6a
+         password += charList.substring(randomNumber, randomNumber +1);
+        }
+        document.getElementById("password").value = password; /* get element by id is same as query selector. This is taking the "password" from the html and setting the value (.value) to the variable password
+        which is += to the random character selected from teh charList - using the substring method*/
+
+    
+    
+    document.getElementById("password").value = password; //error reading "charList undefined" figure out why.
 
   } else {
     alert('You must enter a value between 8-128!');
   }
 }
 
-// create alert when none of the character selections are chosen
+// STILL NEED create alert when none of the character selections are chosen
 
