@@ -11,6 +11,8 @@ When you first enter the application the user will see a button labled "Generate
 
 ![Alt text](./assets/Screenshot1.png)
 
+[Github Test URL](https://tguils.github.io/Password-Generator/)
+
 # Credits
 
 
